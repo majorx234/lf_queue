@@ -15,9 +15,21 @@ add_library(lf_queue)
 target_sources(lf_queue
  PRIVATE
   ${LF_QUEUE_SOURCES}
-  )
-
+)
 target_include_directories(lf_queue
  PRIVATE
- include
- )
+  include
+)
+
+add_library(msg_hdl)
+target_sources(msg_hdl
+ PRIVATE
+  ${LF_QUEUE_SOURCES}
+)
+target_include_directories(msg_hdl
+ PRIVATE
+  include
+)
+target_link_libraries(msg_hdl
+	lf_queue 
+)
